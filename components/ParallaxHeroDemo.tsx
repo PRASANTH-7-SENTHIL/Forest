@@ -132,7 +132,7 @@ export const ParallaxHeroDemo = () => {
       </div>
 
       {/* ---------------- SECTION 1: HERO VIEW ---------------- */}
-      <section className="relative z-10 min-h-[calc(100vh-80px)] flex flex-col justify-between items-center text-center px-6 pt-12 pb-16">
+      <section className="relative z-10 min-h-[calc(100vh-80px)] flex flex-col justify-between items-center text-center px-4 sm:px-6 pt-12 pb-16">
         {/* Giant Backdrop Text ("HERO") */}
         <div
           className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 font-black text-[22vw] tracking-tighter text-white/10 uppercase select-none pointer-events-none whitespace-nowrap z-0 transition-transform duration-300"
@@ -143,7 +143,7 @@ export const ParallaxHeroDemo = () => {
           HERO
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
+        <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center w-full">
           {/* Badge Icon */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -195,15 +195,15 @@ export const ParallaxHeroDemo = () => {
             </Link>
           </motion.div>
 
-          {/* Real Live Statistics Glass Panel */}
+          {/* Mobile Horizontal Scroll Frame (Left-to-Right) / Desktop Grid Statistics Glass Panel */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="w-full glass-panel p-6 rounded-3xl border border-emerald-500/30 max-w-4xl shadow-2xl backdrop-blur-2xl grid grid-cols-2 md:grid-cols-4 gap-6 text-left"
+            className="w-full glass-panel p-5 sm:p-6 rounded-3xl border border-emerald-500/30 max-w-4xl shadow-2xl backdrop-blur-2xl flex md:grid md:grid-cols-4 gap-4 sm:gap-6 text-left overflow-x-auto snap-x snap-mandatory scrollbar-thin scrollbar-thumb-emerald-500"
           >
             {/* Stat 1: Monitoring Nodes */}
-            <div className="flex items-center gap-4 border-r border-emerald-900/40 pr-2">
+            <div className="flex items-center gap-4 border-r border-emerald-900/40 pr-4 shrink-0 min-w-[210px] md:min-w-0 snap-center">
               <div className="w-12 h-12 rounded-2xl bg-emerald-950/80 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0 shadow-lg">
                 <Radio className="w-6 h-6" />
               </div>
@@ -215,7 +215,7 @@ export const ParallaxHeroDemo = () => {
             </div>
 
             {/* Stat 2: Fire Detected */}
-            <div className="flex items-center gap-4 border-r border-emerald-900/40 pr-2">
+            <div className="flex items-center gap-4 border-r border-emerald-900/40 pr-4 shrink-0 min-w-[210px] md:min-w-0 snap-center">
               <div className="w-12 h-12 rounded-2xl bg-red-950/80 border border-red-500/40 flex items-center justify-center text-red-400 shrink-0 shadow-lg">
                 <Flame className={`w-6 h-6 ${activeFireCount > 0 ? "text-red-500 animate-bounce" : "text-emerald-400"}`} />
               </div>
@@ -229,7 +229,7 @@ export const ParallaxHeroDemo = () => {
             </div>
 
             {/* Stat 3: Alerts Sent */}
-            <div className="flex items-center gap-4 border-r border-emerald-900/40 pr-2">
+            <div className="flex items-center gap-4 border-r border-emerald-900/40 pr-4 shrink-0 min-w-[210px] md:min-w-0 snap-center">
               <div className="w-12 h-12 rounded-2xl bg-amber-950/80 border border-amber-500/40 flex items-center justify-center text-amber-400 shrink-0 shadow-lg">
                 <Bell className="w-6 h-6" />
               </div>
@@ -241,7 +241,7 @@ export const ParallaxHeroDemo = () => {
             </div>
 
             {/* Stat 4: System Uptime */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 shrink-0 min-w-[210px] md:min-w-0 snap-center">
               <div className="w-12 h-12 rounded-2xl bg-teal-950/80 border border-teal-500/40 flex items-center justify-center text-teal-400 shrink-0 shadow-lg">
                 <ShieldCheck className="w-6 h-6" />
               </div>
@@ -261,7 +261,7 @@ export const ParallaxHeroDemo = () => {
         </a>
       </section>
 
-      {/* ---------------- SECTION 2: ABOUT THE SYSTEM ---------------- */}
+      {/* ---------------- SECTION 2: ABOUT THE SYSTEM (ONE HORIZONTAL FRAME ON MOBILE) ---------------- */}
       <section id="about" className="relative z-10 py-24 max-w-7xl mx-auto px-6 border-t border-emerald-900/40">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30">
@@ -275,8 +275,10 @@ export const ParallaxHeroDemo = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="glass-panel p-8 rounded-3xl border border-emerald-500/30 hover:border-emerald-400 transition-all">
+        {/* All 3 System Overview Cards in ONE Horizontal Scroll Frame on Mobile */}
+        <div className="flex md:grid md:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-thin scrollbar-thumb-emerald-500 pb-4">
+          {/* Card 1: 15km+ LoRa Radio Range */}
+          <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-emerald-500/30 hover:border-emerald-400 transition-all shrink-0 w-[85vw] max-w-[340px] md:w-auto snap-center">
             <div className="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-400 mb-6">
               <Wifi className="w-7 h-7" />
             </div>
@@ -286,7 +288,8 @@ export const ParallaxHeroDemo = () => {
             </p>
           </div>
 
-          <div className="glass-panel p-8 rounded-3xl border border-emerald-500/30 hover:border-emerald-400 transition-all">
+          {/* Card 2: Dual Flame & Smoke Sensors */}
+          <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-emerald-500/30 hover:border-emerald-400 transition-all shrink-0 w-[85vw] max-w-[340px] md:w-auto snap-center">
             <div className="w-14 h-14 rounded-2xl bg-red-500/20 border border-red-400/40 flex items-center justify-center text-red-400 mb-6">
               <Flame className="w-7 h-7" />
             </div>
@@ -296,7 +299,8 @@ export const ParallaxHeroDemo = () => {
             </p>
           </div>
 
-          <div className="glass-panel p-8 rounded-3xl border border-emerald-500/30 hover:border-emerald-400 transition-all">
+          {/* Card 3: ThingSpeak Cloud Analytics */}
+          <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-emerald-500/30 hover:border-emerald-400 transition-all shrink-0 w-[85vw] max-w-[340px] md:w-auto snap-center">
             <div className="w-14 h-14 rounded-2xl bg-teal-500/20 border border-teal-400/40 flex items-center justify-center text-teal-400 mb-6">
               <BarChart3 className="w-7 h-7" />
             </div>
@@ -320,7 +324,7 @@ export const ParallaxHeroDemo = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-thin scrollbar-thumb-emerald-500 pb-4">
             {[
               { icon: MapPin, title: "Interactive GIS Satellite Map", desc: "Live Leaflet OpenStreetMap layer with satellite, topo, and dark forest views." },
               { icon: Bell, title: "Web Audio Siren & Screen Flash", desc: "Instant acoustic synthesizer alarm & flashing border alerts on fire detection." },
@@ -329,7 +333,7 @@ export const ParallaxHeroDemo = () => {
             ].map((f, i) => {
               const Icon = f.icon;
               return (
-                <div key={i} className="glass-card p-6 rounded-2xl border border-emerald-500/20 hover:border-emerald-400 transition-all">
+                <div key={i} className="glass-card p-6 rounded-2xl border border-emerald-500/20 hover:border-emerald-400 transition-all shrink-0 w-[80vw] max-w-[300px] sm:w-auto snap-center">
                   <div className="w-10 h-10 rounded-xl bg-emerald-950 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
                     <Icon className="w-5 h-5" />
                   </div>
