@@ -195,12 +195,12 @@ export const ParallaxHeroDemo = () => {
             </Link>
           </motion.div>
 
-          {/* Mobile Horizontal Scroll Frame (Left-to-Right) / Desktop Grid Statistics Glass Panel */}
+          {/* Mobile Horizontal Scroll Frame (No Scrollbar Track Visible, Swipe Active) / Desktop Grid */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="w-full glass-panel p-5 sm:p-6 rounded-3xl border border-emerald-500/30 max-w-4xl shadow-2xl backdrop-blur-2xl flex md:grid md:grid-cols-4 gap-4 sm:gap-6 text-left overflow-x-auto snap-x snap-mandatory scrollbar-thin scrollbar-thumb-emerald-500"
+            className="w-full glass-panel p-5 sm:p-6 rounded-3xl border border-emerald-500/30 max-w-4xl shadow-2xl backdrop-blur-2xl flex md:grid md:grid-cols-4 gap-4 sm:gap-6 text-left overflow-x-auto snap-x snap-mandatory no-scrollbar"
           >
             {/* Stat 1: Monitoring Nodes */}
             <div className="flex items-center gap-4 border-r border-emerald-900/40 pr-4 shrink-0 min-w-[210px] md:min-w-0 snap-center">
@@ -261,7 +261,7 @@ export const ParallaxHeroDemo = () => {
         </a>
       </section>
 
-      {/* ---------------- SECTION 2: ABOUT THE SYSTEM (ONE HORIZONTAL FRAME ON MOBILE) ---------------- */}
+      {/* ---------------- SECTION 2: ABOUT THE SYSTEM ---------------- */}
       <section id="about" className="relative z-10 py-24 max-w-7xl mx-auto px-6 border-t border-emerald-900/40">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30">
@@ -275,8 +275,8 @@ export const ParallaxHeroDemo = () => {
           </p>
         </div>
 
-        {/* All 3 System Overview Cards in ONE Horizontal Scroll Frame on Mobile */}
-        <div className="flex md:grid md:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-thin scrollbar-thumb-emerald-500 pb-4">
+        {/* All 3 System Overview Cards in ONE Horizontal Scroll Frame on Mobile (No Scrollbar Track Visible) */}
+        <div className="flex md:grid md:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4">
           {/* Card 1: 15km+ LoRa Radio Range */}
           <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-emerald-500/30 hover:border-emerald-400 transition-all shrink-0 w-[85vw] max-w-[340px] md:w-auto snap-center">
             <div className="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-400 mb-6">
@@ -324,7 +324,7 @@ export const ParallaxHeroDemo = () => {
             </h2>
           </div>
 
-          <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-thin scrollbar-thumb-emerald-500 pb-4">
+          <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4">
             {[
               { icon: MapPin, title: "Interactive GIS Satellite Map", desc: "Live Leaflet OpenStreetMap layer with satellite, topo, and dark forest views." },
               { icon: Bell, title: "Web Audio Siren & Screen Flash", desc: "Instant acoustic synthesizer alarm & flashing border alerts on fire detection." },
