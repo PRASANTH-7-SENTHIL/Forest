@@ -106,13 +106,12 @@ export const MapInner: React.FC<MapInnerProps> = ({ nodes, onTriggerFire }) => {
     Object.values(markersRef.current).forEach((m) => m.remove());
     markersRef.current = {};
 
-    let fireNode: ForestNode | null = null;
+    const fireNode = nodes.find((n) => n.fire);
 
     nodes.forEach((node) => {
       let icon = createHealthyIcon();
       if (node.fire) {
         icon = createFireIcon();
-        fireNode = node;
       } else if (node.status === "warning" || node.smoke) {
         icon = createWarningIcon();
       }
@@ -139,11 +138,11 @@ export const MapInner: React.FC<MapInnerProps> = ({ nodes, onTriggerFire }) => {
             </div>
             <div class="flex justify-between">
               <span class="text-emerald-400/80">Field 3 (Temp):</span>
-              <span class="font-bold text-teal-300">${node.temperature ?? 28.5}°C</span>
+              <span class="font-bold text-teal-300">${node.temperature !== undefined ? `${node.temperature}°C` : "--"}</span>
             </div>
             <div class="flex justify-between">
               <span class="text-emerald-400/80">Field 4 (Humidity):</span>
-              <span class="font-bold text-sky-300">${node.humidity ?? 65}%</span>
+              <span class="font-bold text-sky-300">${node.humidity !== undefined ? `${node.humidity}%` : "--"}</span>
             </div>
             <div class="flex justify-between">
               <span class="text-emerald-400/80">Coordinates:</span>
