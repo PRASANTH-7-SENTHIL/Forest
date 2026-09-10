@@ -1,12 +1,11 @@
-import { ParallaxHeroDemo } from "@/components/ParallaxHeroDemo";
+import { MaintenanceMode } from "@/components/MaintenanceMode";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ForestGuard - LoRa-Based Intelligent Forest Fire Detection & Early Warning System",
-  description:
-    "Real-time IoT wilderness fire detection app utilizing LoRa telemetry, OpenStreetMap React Leaflet GIS, and Firebase Firestore.",
+  title: "ForestGuard - System Upgrade In Progress",
+  description: "ForestGuard is currently on hold during scheduled system maintenance and infrastructure upgrades.",
 };
 
 export default function HomePage() {
-  return <ParallaxHeroDemo />;
+  return <MaintenanceMode />;
 }
